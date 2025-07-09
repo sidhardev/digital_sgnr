@@ -1,0 +1,634 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital SGNR - Professional Web Design Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-poppins">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-20">
+      <div class="container mx-auto px-4 py-3">
+        <div class="flex justify-between items-center">
+          <h1 class="text-2xl font-bold text-primary">Digital SGNR</h1>
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex space-x-6">
+            <a href="#why-online" class="flex items-center gap-1 text-gray-600 hover:text-primary"><span>🌐</span> <span>Why Go Online</span></a>
+            <a href="#how-it-works" class="flex items-center gap-1 text-gray-600 hover:text-primary"><span>🛠️</span> <span>How It Works</span></a>
+            <a href="#services" class="flex items-center gap-1 text-gray-600 hover:text-primary"><span>💼</span> <span>Services</span></a>
+            <a href="#portfolio" class="flex items-center gap-1 text-gray-600 hover:text-primary"><span>🖼️</span> <span>Portfolio</span></a>
+            <a href="#faq" class="flex items-center gap-1 text-gray-600 hover:text-primary"><span>❓</span> <span>FAQ</span></a>
+            <a href="#pricing" class="flex items-center gap-1 text-gray-600 hover:text-primary"><span>💸</span> <span>Pricing</span></a>
+            <a href="#why-choose-us" class="flex items-center gap-1 text-gray-600 hover:text-primary"><span>👍</span> <span>Why Choose Us</span></a>
+            <a href="#contact" class="flex items-center gap-1 text-gray-600 hover:text-primary"><span>📞</span> <span>Contact</span></a>
+          </div>
+          <!-- Mobile Hamburger -->
+          <button id="mobile-menu-btn" class="md:hidden flex items-center px-2 py-1 text-primary focus:outline-none" aria-label="Open menu">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-40 z-40 hidden">
+        <div class="absolute top-0 right-0 w-3/4 max-w-xs bg-white h-full shadow-lg flex flex-col p-8 animate__animated animate__fadeInRight">
+          <button id="close-mobile-menu" class="self-end mb-8 text-gray-600 hover:text-primary focus:outline-none" aria-label="Close menu">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <a href="#why-online" class="flex items-center gap-2 block py-3 px-2 text-lg text-gray-700 hover:text-primary" onclick="closeMobileMenu()"><span>🌐</span> <span>Why Go Online</span></a>
+          <a href="#how-it-works" class="flex items-center gap-2 block py-3 px-2 text-lg text-gray-700 hover:text-primary" onclick="closeMobileMenu()"><span>🛠️</span> <span>How It Works</span></a>
+          <a href="#services" class="flex items-center gap-2 block py-3 px-2 text-lg text-gray-700 hover:text-primary" onclick="closeMobileMenu()"><span>💼</span> <span>Services</span></a>
+          <a href="#portfolio" class="flex items-center gap-2 block py-3 px-2 text-lg text-gray-700 hover:text-primary" onclick="closeMobileMenu()"><span>🖼️</span> <span>Portfolio</span></a>
+          <a href="#faq" class="flex items-center gap-2 block py-3 px-2 text-lg text-gray-700 hover:text-primary" onclick="closeMobileMenu()"><span>❓</span> <span>FAQ</span></a>
+          <a href="#pricing" class="flex items-center gap-2 block py-3 px-2 text-lg text-gray-700 hover:text-primary" onclick="closeMobileMenu()"><span>💸</span> <span>Pricing</span></a>
+          <a href="#why-choose-us" class="flex items-center gap-2 block py-3 px-2 text-lg text-gray-700 hover:text-primary" onclick="closeMobileMenu()"><span>👍</span> <span>Why Choose Us</span></a>
+          <a href="#contact" class="flex items-center gap-2 block py-3 px-2 text-lg text-gray-700 hover:text-primary" onclick="closeMobileMenu()"><span>📞</span> <span>Contact</span></a>
+        </div>
+      </div>
+      <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeBtn = document.getElementById('close-mobile-menu');
+        function closeMobileMenu() {
+          mobileMenu.classList.add('hidden');
+          document.body.classList.remove('overflow-hidden');
+        }
+        menuBtn.addEventListener('click', () => {
+          mobileMenu.classList.remove('hidden');
+          document.body.classList.add('overflow-hidden');
+        });
+        closeBtn.addEventListener('click', closeMobileMenu);
+        // Close on click outside
+        mobileMenu.addEventListener('click', (e) => {
+          if (e.target === mobileMenu) closeMobileMenu();
+        });
+      </script>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-24 pb-20 bg-gradient-to-br from-primary/95 to-primary overflow-hidden">
+        <!-- Animated Background Shape -->
+        <div class="absolute -top-32 -left-32 w-[500px] h-[500px] bg-gradient-to-tr from-blue-400 via-primary to-blue-900 opacity-30 rounded-full blur-3xl animate-spin-slow z-0"></div>
+        <div class="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-br from-blue-200 via-primary to-blue-700 opacity-20 rounded-full blur-2xl animate-pulse z-0"></div>
+        <div class="container mx-auto px-4 py-16 relative z-10">
+            <div class="text-center">
+                <h2 class="text-4xl md:text-6xl font-bold text-white mb-6 animate__animated animate__fadeInDown animate__faster">Apka Business, Ab Online!</h2>
+                <p class="text-lg md:text-xl text-white/90 mb-8 animate__animated animate__fadeInUp animate__delay-1s">Transform your local business with a powerful online presence</p>
+                <a href="#contact" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold shadow-lg hover:bg-gray-100 transition hover:shadow-2xl animate__animated animate__zoomIn animate__delay-2s inline-block relative overflow-hidden group">
+                    <span class="relative z-10 group-hover:animate-pulse">Get Your Website Now</span>
+                    <span class="absolute inset-0 bg-blue-100 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges Section -->
+
+
+    <!-- Trust Badges Section -->
+    <section class="bg-white py-6 shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-6 md:gap-12">
+                <div class="flex flex-col items-center">
+                    <div class="bg-blue-100 text-primary rounded-full w-16 h-16 flex items-center justify-center shadow-md mb-2 text-3xl animate__animated animate__fadeInUp animate__delay-1s">
+                        🚀
+                    </div>
+                    <div class="font-semibold text-gray-700 text-sm">Fast Delivery</div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="bg-blue-100 text-primary rounded-full w-16 h-16 flex items-center justify-center shadow-md mb-2 text-3xl animate__animated animate__fadeInUp animate__delay-2s">
+                        🤝
+                    </div>
+                    <div class="font-semibold text-gray-700 text-sm">Free Support</div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="bg-blue-100 text-primary rounded-full w-16 h-16 flex items-center justify-center shadow-md mb-2 text-3xl animate__animated animate__fadeInUp animate__delay-3s">
+                        📱
+                    </div>
+                    <div class="font-semibold text-gray-700 text-sm">Mobile Friendly</div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="bg-blue-100 text-primary rounded-full w-16 h-16 flex items-center justify-center shadow-md mb-2 text-3xl animate__animated animate__fadeInUp animate__delay-4s">
+                        🇮🇳
+                    </div>
+                    <div class="font-semibold text-gray-700 text-sm">Made for India</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Go Online Section -->
+    <section id="why-online" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">Why Go Online?</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="text-primary text-4xl mb-4">🌐</div>
+                    <h3 class="text-xl font-semibold mb-2">Wider Reach</h3>
+                    <p class="text-gray-600">Connect with customers beyond your local area</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="text-primary text-4xl mb-4">⭐</div>
+                    <h3 class="text-xl font-semibold mb-2">Build Trust</h3>
+                    <p class="text-gray-600">Showcase your expertise and customer reviews</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="text-primary text-4xl mb-4">🎯</div>
+                    <h3 class="text-xl font-semibold mb-2">24/7 Visibility</h3>
+                    <p class="text-gray-600">Your business never sleeps online</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="text-primary text-4xl mb-4">📱</div>
+                    <h3 class="text-xl font-semibold mb-2">Professional Brand</h3>
+                    <p class="text-gray-600">Stand out from your competition</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">How It Works</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="flex flex-col items-center bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-lg transition">
+                    <div class="flex items-center justify-center w-14 h-14 rounded-full bg-primary text-white text-2xl font-bold mb-4">1</div>
+                    <div class="text-4xl mb-3">💬</div>
+                    <h3 class="text-lg font-semibold mb-2">Contact Us</h3>
+                    <p class="text-gray-600 text-center">Reach us via WhatsApp or Telegram</p>
+                </div>
+                <div class="flex flex-col items-center bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-lg transition">
+                    <div class="flex items-center justify-center w-14 h-14 rounded-full bg-primary text-white text-2xl font-bold mb-4">2</div>
+                    <div class="text-4xl mb-3">📝</div>
+                    <h3 class="text-lg font-semibold mb-2">Share Details</h3>
+                    <p class="text-gray-600 text-center">Tell us about your shop, clinic, salon, etc.</p>
+                </div>
+                <div class="flex flex-col items-center bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-lg transition">
+                    <div class="flex items-center justify-center w-14 h-14 rounded-full bg-primary text-white text-2xl font-bold mb-4">3</div>
+                    <div class="text-4xl mb-3">🎨</div>
+                    <h3 class="text-lg font-semibold mb-2">We Design</h3>
+                    <p class="text-gray-600 text-center">We’ll create your modern, mobile-friendly website</p>
+                </div>
+                <div class="flex flex-col items-center bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-lg transition">
+                    <div class="flex items-center justify-center w-14 h-14 rounded-full bg-primary text-white text-2xl font-bold mb-4">4</div>
+                    <div class="text-4xl mb-3">🚀</div>
+                    <h3 class="text-lg font-semibold mb-2">Go Live</h3>
+                    <p class="text-gray-600 text-center">Your business goes online in 3–5 days</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">What We Do</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition border border-gray-100">
+                    <div class="text-primary text-4xl mb-4">🛍️</div>
+                    <h3 class="text-xl font-semibold mb-3">Shop Websites</h3>
+                    <p class="text-gray-600">Beautiful online stores for your retail business</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition border border-gray-100">
+                    <div class="text-primary text-4xl mb-4">🏥</div>
+                    <h3 class="text-xl font-semibold mb-3">Hospital Websites</h3>
+                    <p class="text-gray-600">Professional websites for healthcare providers</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition border border-gray-100">
+                    <div class="text-primary text-4xl mb-4">🍽️</div>
+                    <h3 class="text-xl font-semibold mb-3">Restaurant Sites</h3>
+                    <p class="text-gray-600">Appetizing websites for restaurants & cafes</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition border border-gray-100">
+                    <div class="text-primary text-4xl mb-4">💼</div>
+                    <h3 class="text-xl font-semibold mb-3">Portfolio Sites</h3>
+                    <p class="text-gray-600">Showcase your work and services</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition border border-gray-100">
+                    <div class="text-primary text-4xl mb-4">🎨</div>
+                    <h3 class="text-xl font-semibold mb-3">Custom Design</h3>
+                    <p class="text-gray-600">Unique websites tailored to your needs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12 animate__animated animate__fadeInDown">Our Recent Work</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition transform hover:-translate-y-2 animate__animated animate__fadeInUp animate__delay-1s">
+                    <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=600&q=80" alt="Fashion Boutique Website" class="w-full h-48 object-cover transition-transform duration-500 hover:scale-105">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Fashion Boutique</h3>
+                        <p class="text-gray-600">Modern e-commerce website for a local fashion store</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition transform hover:-translate-y-2 animate__animated animate__fadeInUp animate__delay-2s">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80" alt="Restaurant Website" class="w-full h-48 object-cover transition-transform duration-500 hover:scale-105">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Spice Garden</h3>
+                        <p class="text-gray-600">Restaurant website with online ordering system</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition transform hover:-translate-y-2 animate__animated animate__fadeInUp animate__delay-3s">
+                    <img src="data:image/jpeg;base64,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" alt="Clinic Website" class="w-full h-48 object-cover transition-transform duration-500 hover:scale-105">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">City Clinic</h3>
+                        <p class="text-gray-600">Healthcare website with appointment booking</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">What Our Clients Say</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="text-primary text-4xl mb-4">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-600 mb-4">"Digital SGNR transformed our local shop into an online success. Our customers love ordering through our website!"</p>
+                    <div class="font-semibold">Rajesh Kumar</div>
+                    <div class="text-sm text-gray-500">Fashion Store Owner</div>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="text-primary text-4xl mb-4">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-600 mb-4">"Professional team, beautiful design, and excellent support. Our restaurant website looks amazing!"</p>
+                    <div class="font-semibold">Priya Singh</div>
+                    <div class="text-sm text-gray-500">Restaurant Manager</div>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="text-primary text-4xl mb-4">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-600 mb-4">"The website has helped us reach more patients. The online appointment system is a game-changer!"</p>
+                    <div class="font-semibold">Dr. Amit Patel</div>
+                    <div class="text-sm text-gray-500">Clinic Director</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-white">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">Frequently Asked Questions</h2>
+            <div class="space-y-8">
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-semibold text-primary mb-2">1. How long does it take to make a website?</h3>
+                    <p class="text-gray-700">We usually deliver your website in just 3 to 5 days after receiving your details.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-semibold text-primary mb-2">2. I don't know anything about websites. Can I still get one?</h3>
+                    <p class="text-gray-700">Yes, absolutely! You can get your website built at the best price, even if you have no technical knowledge.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-semibold text-primary mb-2">3. Will you help me after the website is live?</h3>
+                    <p class="text-gray-700">Yes, we provide full support even after your website is live, and that too without any extra charges.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-semibold text-primary mb-2">4. Can I use my own domain name?</h3>
+                    <p class="text-gray-700">Yes, you can use your own free subdomain like yourshop.rf.gd. And if you already have a domain name, we can connect that too.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose-us" class="py-20 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">Why Choose Us</h2>
+            <ul class="space-y-8">
+                <li class="flex items-start gap-4">
+                    <span class="text-primary text-2xl mt-1">✔️</span>
+                    <div>
+                        <div class="font-semibold text-lg mb-1">We Understand Local Business Needs</div>
+                        <div class="text-gray-700">From shops to clinics — we speak your language and design for your audience.</div>
+                    </div>
+                </li>
+                <li class="flex items-start gap-4">
+                    <span class="text-primary text-2xl mt-1">⏱️</span>
+                    <div>
+                        <div class="font-semibold text-lg mb-1">Fast Delivery in 3–5 Days</div>
+                        <div class="text-gray-700">No delays. Your site will be live within a week. Guaranteed.</div>
+                    </div>
+                </li>
+                <li class="flex items-start gap-4">
+                    <span class="text-primary text-2xl mt-1">💸</span>
+                    <div>
+                        <div class="font-semibold text-lg mb-1">Affordable & Transparent Pricing</div>
+                        <div class="text-gray-700">No hidden costs. Full website starting from just ₹999.</div>
+                    </div>
+                </li>
+                <li class="flex items-start gap-4">
+                    <span class="text-primary text-2xl mt-1">📱</span>
+                    <div>
+                        <div class="font-semibold text-lg mb-1">WhatsApp & Mobile Friendly</div>
+                        <div class="text-gray-700">Your customers will reach you easily — anytime, anywhere.</div>
+                    </div>
+                </li>
+                <li class="flex items-start gap-4">
+                    <span class="text-primary text-2xl mt-1">🤝</span>
+                    <div>
+                        <div class="font-semibold text-lg mb-1">Free Support Even After Launch</div>
+                        <div class="text-gray-700">Need a change or help? We’re here, even after your website is live.</div>
+                    </div>
+                </li>
+                <li class="flex items-start gap-4">
+                    <span class="text-primary text-2xl mt-1">🙌</span>
+                    <div>
+                        <div class="font-semibold text-lg mb-1">You Don’t Need Any Tech Knowledge</div>
+                        <div class="text-gray-700">You focus on your business. We’ll handle everything digital.</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- Our Website Demos Section -->
+    <section id="website-demos" class="demos-section">
+      <div class="demos-container">
+        <h2 class="demos-title">Our Website Demos</h2>
+        <p class="demos-subtitle">See examples of beautiful, ready-to-launch websites for your business</p>
+        <div class="demos-grid">
+          <div class="demo-card">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" alt="Salon Demo" class="demo-img">
+            <div class="demo-info">
+              <div class="demo-name">Salon</div>
+              <a href="#" class="demo-btn" target="_blank">View Demo</a>
+            </div>
+          </div>
+          <div class="demo-card">
+            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd07?auto=format&fit=crop&w=400&q=80" alt="Clinic Demo" class="demo-img">
+            <div class="demo-info">
+              <div class="demo-name">Clinic</div>
+              <a href="#" class="demo-btn" target="_blank">View Demo</a>
+            </div>
+          </div>
+          <div class="demo-card">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Restaurant Demo" class="demo-img">
+            <div class="demo-info">
+              <div class="demo-name">Restaurant</div>
+              <a href="#" class="demo-btn" target="_blank">View Demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <style>
+      /* Website Demos Section */
+      .demos-section {
+        background: #f8fafc;
+        padding: 3.5rem 0 3.5rem 0;
+      }
+      .demos-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 1.25rem;
+      }
+      .demos-title {
+        font-size: 2.2rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 0.5rem;
+        color: #1e293b;
+        letter-spacing: -1px;
+      }
+      .demos-subtitle {
+        text-align: center;
+        color: #64748b;
+        font-size: 1.1rem;
+        margin-bottom: 2.5rem;
+      }
+      .demos-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      @media (min-width: 700px) {
+        .demos-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      .demo-card {
+        background: #fff;
+        border-radius: 1.2rem;
+        box-shadow: 0 4px 24px 0 rgba(30,58,138,0.07), 0 1.5px 6px 0 rgba(0,0,0,0.03);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.18s, box-shadow 0.18s;
+        border: 1px solid #e5e7eb;
+      }
+      .demo-card:hover {
+        transform: translateY(-7px) scale(1.025);
+        box-shadow: 0 8px 32px 0 rgba(30,58,138,0.13), 0 2px 8px 0 rgba(0,0,0,0.06);
+      }
+      .demo-img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-top-left-radius: 1.2rem;
+        border-top-right-radius: 1.2rem;
+      }
+      .demo-info {
+        padding: 1.3rem 1.2rem 1.5rem 1.2rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .demo-name {
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: #1e293b;
+        margin-bottom: 1.1rem;
+        letter-spacing: 0.2px;
+      }
+      .demo-btn {
+        display: inline-block;
+        background: linear-gradient(90deg, #2563eb 0%, #1e3a8a 100%);
+        color: #fff;
+        font-weight: 600;
+        padding: 0.65rem 1.5rem;
+        border-radius: 999px;
+        text-decoration: none;
+        box-shadow: 0 2px 12px 0 rgba(30,58,138,0.10);
+        transition: background 0.18s, box-shadow 0.18s, transform 0.18s;
+      }
+      .demo-btn:hover {
+        background: linear-gradient(90deg, #1e3a8a 0%, #2563eb 100%);
+        box-shadow: 0 4px 18px 0 rgba(30,58,138,0.18);
+        transform: scale(1.06);
+      }
+    </style>
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">Pricing</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Starter Plan -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center border-2 border-gray-100 hover:border-primary transition">
+                    <h3 class="text-2xl font-bold text-primary mb-2">Starter Plan</h3>
+                    <div class="text-3xl font-extrabold text-gray-900 mb-1">₹999</div>
+                    <div class="text-sm text-gray-500 mb-4">For new local businesses who just want to be found online</div>
+                    <ul class="text-gray-700 space-y-2 mb-6 text-center">
+                        <li>1 Page Scrollable Website (Mobile Friendly)</li>
+                        <li>WhatsApp Contact Button</li>
+                        <li>Basic Info: About, Services, Location</li>
+                        <li>Free Subdomain (yourshop.rf.gd)</li>
+                        <li>Ready in 3 Days</li>
+                    </ul>
+                    <a href="#contact" class="mt-auto bg-primary text-white px-6 py-3 rounded-full font-semibold shadow hover:bg-primary/90 transition">Get Started</a>
+                </div>
+                <!-- Smart Plan (Most Popular) -->
+                <div class="bg-white rounded-2xl shadow-2xl p-8 flex flex-col items-center border-4 border-primary scale-105 z-10 relative">
+                    <div class="absolute -top-5 right-5 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full shadow">Most Popular</div>
+                    <h3 class="text-2xl font-bold text-primary mb-2">Smart Plan</h3>
+                    <div class="text-3xl font-extrabold text-gray-900 mb-1">₹2499</div>
+                    <div class="text-sm text-gray-500 mb-4">For businesses that want to grow & look professional</div>
+                    <ul class="text-gray-700 space-y-2 mb-6 text-center">
+                        <li>3–4 Page Website (Home, About, Services, Contact)</li>
+                        <li>Custom Design + Portfolio/Gallery</li>
+                        <li>Contact Form + WhatsApp Integration</li>
+                        <li>Custom Subdomain (yourbrand.rf.gd)</li>
+                        <li>SEO Ready (Basic), Analytics Setup</li>
+                        <li>Free Support & Edits for 15 Days</li>
+                    </ul>
+                    <a href="#contact" class="mt-auto bg-primary text-white px-6 py-3 rounded-full font-semibold shadow hover:bg-primary/90 transition">Grow My Business</a>
+                </div>
+                <!-- Pro Plan -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center border-2 border-gray-100 hover:border-primary transition">
+                    <h3 class="text-2xl font-bold text-primary mb-2">Pro Plan</h3>
+                    <div class="text-3xl font-extrabold text-gray-900 mb-1">₹4999</div>
+                    <div class="text-sm text-gray-500 mb-4">For serious businesses who want full digital power</div>
+                    <ul class="text-gray-700 space-y-2 mb-6 text-center">
+                        <li>5+ Pages or Dynamic Website (with Booking or Product Showcase)</li>
+                        <li>WhatsApp Bot / Auto Replies</li>
+                        <li>Blog, Enquiry Form, Social Links, Custom Domain Support</li>
+                        <li>SEO Setup + Google Map + Page Speed Optimization</li>
+                        <li>Premium Support (30 Days)</li>
+                    </ul>
+                    <a href="#contact" class="mt-auto bg-primary text-white px-6 py-3 rounded-full font-semibold shadow hover:bg-primary/90 transition">Launch My Brand</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">Get in Touch</h2>
+            <div class="max-w-xl mx-auto">
+                <div class="bg-white rounded-lg shadow-lg p-12 flex flex-col items-center">
+                    <a href="https://wa.me/+917850018347" target="_blank"
+   class="inline-flex items-center gap-3 bg-gradient-to-r from-green-400 via-green-500 to-green-600 text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:from-green-500 hover:to-green-700 focus:outline-none focus:ring-4 focus:ring-green-300 transition-all duration-300 mb-4"
+   style="box-shadow: 0 8px 32px 0 rgba(34,197,94,0.25);">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-7 h-7">
+                          <path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.16 1.6 5.97L0 24l6.22-1.63A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 22c-1.85 0-3.67-.5-5.24-1.44l-.37-.22-3.69.97.99-3.59-.24-.37A9.94 9.94 0 0 1 2 12c0-5.52 4.48-10 10-10s10 4.48 10 10-4.48 10-10 10zm5.2-7.8c-.28-.14-1.65-.81-1.9-.9-.25-.09-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.18-.44-2.25-1.4-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.12-.12.28-.32.42-.48.14-.16.18-.28.28-.46.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47-.16-.01-.34-.01-.52-.01-.18 0-.48.07-.73.34-.25.27-.97.95-.97 2.3 0 1.35.99 2.65 1.13 2.83.14.18 1.95 2.98 4.74 4.06.66.28 1.18.45 1.58.58.66.21 1.26.18 1.73.11.53-.08 1.65-.67 1.89-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.18-.53-.32z"/>
+                        </svg>
+                        <span>Chat on WhatsApp</span>
+                    </a>
+                    <a href="https://t.me/sidhar0" target="_blank"
+   class="inline-flex items-center gap-3 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:from-blue-500 hover:to-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition-all duration-300 mb-2"
+   style="box-shadow: 0 8px 32px 0 rgba(59,130,246,0.18);">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-7 h-7">
+                          <path d="M9.036 16.569c-.363 0-.302-.137-.427-.484l-1.07-3.522 8.207-4.86" fill="none"/>
+      <path d="M21.543 6.498l-3.195 15.076c-.242 1.077-.877 1.342-1.778.835l-4.909-3.619-2.368 2.279c-.262.262-.482.482-.988.482l.353-5.004 9.104-8.229c.396-.353-.086-.55-.615-.197l-11.262 7.09-4.849-1.516c-1.052-.33-1.072-1.052.219-1.554l19.021-7.344c.885-.324 1.656.216 1.372 1.543z"/>
+                        </svg>
+                        <span>Chat on Telegram</span>
+                    </a>
+                    <p class="text-gray-600 mt-8 text-center text-lg">Click the buttons above to chat directly with us on WhatsApp or Telegram.<br>We respond quickly!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- WhatsApp Floating Button (Mobile Friendly) -->
+    <a href="https://wa.me/+917850018347" target="_blank" aria-label="Chat on WhatsApp"
+       class="fixed z-50 bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 transition-all duration-300 group focus:outline-none focus:ring-4 focus:ring-green-300">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-7 h-7 sm:w-8 sm:h-8">
+        <path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.16 1.6 5.97L0 24l6.22-1.63A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 22c-1.85 0-3.67-.5-5.24-1.44l-.37-.22-3.69.97.99-3.59-.24-.37A9.94 9.94 0 0 1 2 12c0-5.52 4.48-10 10-10s10 4.48 10 10-4.48 10-10 10zm5.2-7.8c-.28-.14-1.65-.81-1.9-.9-.25-.09-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.18-.44-2.25-1.4-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.12-.12.28-.32.42-.48.14-.16.18-.28.28-.46.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47-.16-.01-.34-.01-.52-.01-.18 0-.48.07-.73.34-.25.27-.97.95-.97 2.3 0 1.35.99 2.65 1.13 2.83.14.18 1.95 2.98 4.74 4.06.66.28 1.18.45 1.58.58.66.21 1.26.18 1.73.11.53-.08 1.65-.67 1.89-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.18-.53-.32z"/>
+      </svg>
+      <span class="absolute opacity-0 group-hover:opacity-100 bg-gray-900 text-white text-xs rounded px-2 py-1 bottom-16 right-0 pointer-events-none transition-all duration-300 whitespace-nowrap sm:bottom-20">Chat on WhatsApp</span>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-8 text-center text-sm md:text-base">
+      <div class="container mx-auto px-4">
+        <p>&copy; 2025 Digital SGNR. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Animate sections on scroll -->
+    <script>
+      // Animate on scroll for sections (simple intersection observer)
+      document.addEventListener('DOMContentLoaded', function() {
+        const animatedSections = document.querySelectorAll('.animate__animated');
+        const observer = new window.IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate__fadeInUp');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+        animatedSections.forEach(section => {
+          observer.observe(section);
+        });
+      });
+    </script>
+    <style>
+      @keyframes spin-slow {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      .animate-spin-slow {
+        animation: spin-slow 18s linear infinite;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      /* Responsive tweaks for mobile */
+      @media (max-width: 640px) {
+        h1, h2, h3, h4 { word-break: break-word; }
+        .container { padding-left: 1rem; padding-right: 1rem; }
+        .rounded-lg, .rounded-xl, .rounded-2xl { border-radius: 1rem !important; }
+        .shadow-lg, .shadow-xl, .shadow-2xl { box-shadow: 0 4px 24px 0 rgba(0,0,0,0.08) !important; }
+        .text-4xl { font-size: 2rem !important; }
+        .text-3xl { font-size: 1.5rem !important; }
+        .text-2xl { font-size: 1.25rem !important; }
+        .text-xl { font-size: 1.1rem !important; }
+        .p-8 { padding: 1.5rem !important; }
+        .py-16, .py-20 { padding-top: 2.5rem !important; padding-bottom: 2.5rem !important; }
+        .mb-12 { margin-bottom: 2rem !important; }
+        .w-16, .h-16 { width: 3.5rem !important; height: 3.5rem !important; }
+      }
+    </style>
+</body>
+</html>
